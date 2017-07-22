@@ -4,7 +4,7 @@
 #
 Name     : perl-TAP-Harness-Archive
 Version  : 0.18
-Release  : 15
+Release  : 16
 URL      : http://search.cpan.org/CPAN/authors/id/S/SC/SCHWIGON/TAP-Harness-Archive-0.18.tar.gz
 Source0  : http://search.cpan.org/CPAN/authors/id/S/SC/SCHWIGON/TAP-Harness-Archive-0.18.tar.gz
 Summary  : unknown
@@ -28,6 +28,10 @@ doc components for the perl-TAP-Harness-Archive package.
 %setup -q -n TAP-Harness-Archive-0.18
 
 %build
+export http_proxy=http://127.0.0.1:9/
+export https_proxy=http://127.0.0.1:9/
+export no_proxy=localhost,127.0.0.1,0.0.0.0
+export LANG=C
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make V=1  %{?_smp_mflags}
@@ -37,9 +41,10 @@ else
 fi
 
 %check
+export LANG=C
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
-export no_proxy=localhost
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 make TEST_VERBOSE=1 test
 
 %install
@@ -56,7 +61,7 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.24.0/TAP/Harness/Archive.pm
+/usr/lib/perl5/site_perl/5.26.0/TAP/Harness/Archive.pm
 
 %files doc
 %defattr(-,root,root,-)
