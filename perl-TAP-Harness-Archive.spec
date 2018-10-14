@@ -4,24 +4,25 @@
 #
 Name     : perl-TAP-Harness-Archive
 Version  : 0.18
-Release  : 20
+Release  : 21
 URL      : http://search.cpan.org/CPAN/authors/id/S/SC/SCHWIGON/TAP-Harness-Archive-0.18.tar.gz
 Source0  : http://search.cpan.org/CPAN/authors/id/S/SC/SCHWIGON/TAP-Harness-Archive-0.18.tar.gz
 Summary  : unknown
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
-Requires: perl-TAP-Harness-Archive-doc
+BuildRequires : buildreq-cpan
 BuildRequires : perl(YAML::Tiny)
 
 %description
 No detailed description available
 
-%package doc
-Summary: doc components for the perl-TAP-Harness-Archive package.
-Group: Documentation
+%package dev
+Summary: dev components for the perl-TAP-Harness-Archive package.
+Group: Development
+Provides: perl-TAP-Harness-Archive-devel = %{version}-%{release}
 
-%description doc
-doc components for the perl-TAP-Harness-Archive package.
+%description dev
+dev components for the perl-TAP-Harness-Archive package.
 
 
 %prep
@@ -34,7 +35,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
-make V=1  %{?_smp_mflags}
+make  %{?_smp_mflags}
 else
 %{__perl} Build.PL
 ./Build
@@ -50,9 +51,9 @@ make TEST_VERBOSE=1 test
 %install
 rm -rf %{buildroot}
 if test -f Makefile.PL; then
-make pure_install PERL_INSTALL_ROOT=%{buildroot}
+make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
-./Build install --installdirs=site --destdir=%{buildroot}
+./Build install --installdirs=vendor --destdir=%{buildroot}
 fi
 find %{buildroot} -type f -name .packlist -exec rm -f {} ';'
 find %{buildroot} -depth -type d -exec rmdir {} 2>/dev/null ';'
@@ -61,8 +62,8 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.26.1/TAP/Harness/Archive.pm
+/usr/lib/perl5/vendor_perl/5.26.1/TAP/Harness/Archive.pm
 
-%files doc
+%files dev
 %defattr(-,root,root,-)
-%doc /usr/share/man/man3/*
+/usr/share/man/man3/TAP::Harness::Archive.3
