@@ -4,7 +4,7 @@
 #
 Name     : perl-TAP-Harness-Archive
 Version  : 0.18
-Release  : 21
+Release  : 22
 URL      : http://search.cpan.org/CPAN/authors/id/S/SC/SCHWIGON/TAP-Harness-Archive-0.18.tar.gz
 Source0  : http://search.cpan.org/CPAN/authors/id/S/SC/SCHWIGON/TAP-Harness-Archive-0.18.tar.gz
 Summary  : unknown
@@ -62,7 +62,7 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.26.1/TAP/Harness/Archive.pm
+/usr/lib/perl5/vendor_perl/5.28.0/TAP/Harness/Archive.pm
 
 %files dev
 %defattr(-,root,root,-)
