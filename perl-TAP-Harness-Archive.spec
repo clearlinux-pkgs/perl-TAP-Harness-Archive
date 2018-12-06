@@ -62,7 +62,7 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.1TAP/Harness/Archive.pm
+/usr/lib/perl5/vendor_perl/5.28.1/TAP/Harness/Archive.pm
 
 %files dev
 %defattr(-,root,root,-)
