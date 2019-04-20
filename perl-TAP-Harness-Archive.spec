@@ -4,10 +4,10 @@
 #
 Name     : perl-TAP-Harness-Archive
 Version  : 0.18
-Release  : 26
+Release  : 27
 URL      : http://search.cpan.org/CPAN/authors/id/S/SC/SCHWIGON/TAP-Harness-Archive-0.18.tar.gz
 Source0  : http://search.cpan.org/CPAN/authors/id/S/SC/SCHWIGON/TAP-Harness-Archive-0.18.tar.gz
-Summary  : unknown
+Summary  : Create an archive of TAP test results
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
 BuildRequires : buildreq-cpan
@@ -20,6 +20,7 @@ No detailed description available
 Summary: dev components for the perl-TAP-Harness-Archive package.
 Group: Development
 Provides: perl-TAP-Harness-Archive-devel = %{version}-%{release}
+Requires: perl-TAP-Harness-Archive = %{version}-%{release}
 
 %description dev
 dev components for the perl-TAP-Harness-Archive package.
