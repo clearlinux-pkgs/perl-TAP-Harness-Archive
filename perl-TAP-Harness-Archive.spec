@@ -4,13 +4,14 @@
 #
 Name     : perl-TAP-Harness-Archive
 Version  : 0.18
-Release  : 29
+Release  : 30
 URL      : http://search.cpan.org/CPAN/authors/id/S/SC/SCHWIGON/TAP-Harness-Archive-0.18.tar.gz
 Source0  : http://search.cpan.org/CPAN/authors/id/S/SC/SCHWIGON/TAP-Harness-Archive-0.18.tar.gz
 Summary  : unknown
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
 Requires: perl-TAP-Harness-Archive-perl = %{version}-%{release}
+Requires: perl(YAML::Tiny)
 BuildRequires : buildreq-cpan
 BuildRequires : perl(YAML::Tiny)
 
