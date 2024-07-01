@@ -4,7 +4,7 @@
 #
 Name     : perl-TAP-Harness-Archive
 Version  : 0.18
-Release  : 42
+Release  : 43
 URL      : http://search.cpan.org/CPAN/authors/id/S/SC/SCHWIGON/TAP-Harness-Archive-0.18.tar.gz
 Source0  : http://search.cpan.org/CPAN/authors/id/S/SC/SCHWIGON/TAP-Harness-Archive-0.18.tar.gz
 Summary  : unknown
